@@ -5,12 +5,14 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Facebook Profile — Jose Rizal</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="pictures/Facebook_Logo_(2019).png">
 </head>
 <body>
   <!-- TOP NAV -->
   <header class="topbar">
     <div class="topbar-left">
-      <button class="logo" aria-label="Facebook Home">f</button>
+      
+      <button class="logo" aria-label="Facebook Home"><img src="pictures/Facebook_Logo_(2019).png" alt="" style="height:45px;"></button>
       <div class="search">
         <input type="search" placeholder="Search Facebook" aria-label="Search">
       </div>
@@ -47,7 +49,7 @@
     <!-- profile row -->
     <div class="profile-row">
       <div class="profile-photo">
-        <img src="pictures/Jose_Rizal_full.jpg" alt="Profile photo" ">
+        <img src="/pictures/Jose_Rizal_full.jpg" alt="Profile photo" class="family">
         <button class="upload-photo">Change</button>
       </div>
 
@@ -144,10 +146,13 @@
       <!-- Composer -->
       <div class="composer card">
         <img class="composer-avatar" src="pictures/Jose_Rizal_full.jpg" alt="you">
-        <input class="composer-input" type="text" placeholder="What's on your mind, Jose?">
+        <input class="composer-input" type="text" placeholder="What's on your mind, Jeross?">
         <div class="composer-actions">
+          <img height="24" width="24" class="xz74otr x15mokao x1ga7v0g x16uus16 xbiv7yw" alt="" referrerpolicy="origin-when-cross-origin" src="https://static.xx.fbcdn.net/rsrc.php/v4/yr/r/c0dWho49-X3.png?_nc_eui2=AeGQQim_YT6WYpTpQMhjUzeGueRic5Ym8Wm55GJzlibxacAvxBnHVBcesil9ALwLD-ygNg-UJVRDVWzcpWG9pgQz">
           <button>Live video</button>
+          <img height="24" width="24" class="xz74otr x15mokao x1ga7v0g x16uus16 xbiv7yw" alt="" referrerpolicy="origin-when-cross-origin" src="https://static.xx.fbcdn.net/rsrc.php/v4/y7/r/Ivw7nhRtXyo.png?_nc_eui2=AeFYbeehmeWHBZxeKg5rnQ0YkBVQC4m7dx6QFVALibt3Hrf8T0pLPl8Bnz4mUpkPjKFG0KF7rouKKL7gy7I1BqIb">
           <button>Photo/video</button>
+          <img height="24" width="24" class="xz74otr x15mokao x1ga7v0g x16uus16 xbiv7yw" alt="" referrerpolicy="origin-when-cross-origin" src="https://static.xx.fbcdn.net/rsrc.php/v4/yd/r/pkbalDbTOVI.png?_nc_eui2=AeFDPtH6bgn_CUZqWtdO6XOvxUvOOua_OjbFS8465r86Nu2the4gHQXJ1AMOYmBinKCPsjha9Eli44frHQZ4-dQv">
           <button>Life update</button>
         </div>
       </div>
@@ -221,7 +226,7 @@
         <header class="post-head">
           <img src="pictures/Jose_Rizal_full.jpg" alt="">
           <div>
-            <strong>José Protacio Rizal Mercado y Alonzo Realonda</strong>
+            <strong>José Protacio Rizal Mercado y Alonzo Realonda</strong> <span style="color: gray;">updated his profile picture.</span>
             <div class="meta">February 14, 1877</div>
           </div>
         </header>
@@ -243,10 +248,21 @@
       <section class="card suggestions">
         <h3>People you may know</h3>
         <div class="suggest">
-          <img src="pictures/Antonio_luna_small.jpg" alt="">
+          <img src="pictures/Antonio_luna_small.jpg" alt="Antonio Luna">
           <div>
             <strong>Antonio Luna</strong>
             <div class="muted">18 mutual friends</div>
+            <div class="suggest-actions">
+              <button>Add friend</button>
+              <button>Remove</button>
+            </div>
+          </div>  
+        </div>
+        <div class="suggest">
+          <img src="pictures/Maam Mika.jpg" alt="Ma'am Mika Repedro">
+          <div>
+            <strong>Mika Repedro</strong>
+            <div class="muted">2 mutual friends</div>
             <div class="suggest-actions">
               <button>Add friend</button>
               <button>Remove</button>
@@ -290,42 +306,22 @@
 
   <!-- Minimal JS for theme, messenger open/close -->
   <script>
-    // Theme toggle (light/dark persisted)
     const themeToggle = document.getElementById('themeToggle');
     const root = document.documentElement;
+  
     function setTheme(mode) {
       root.setAttribute('data-theme', mode);
-      themeToggle.setAttribute('aria-pressed', mode === 'dark');
-      try { localStorage.setItem('fb_profile_theme', mode); } catch(e){}
+      themeToggle.textContent = mode === 'dark' ? '🌙' : '☀️';
+      localStorage.setItem('fb_profile_theme', mode);
     }
-    // init
+  
     const saved = localStorage.getItem('fb_profile_theme') || 'dark';
     setTheme(saved);
+  
     themeToggle.addEventListener('click', () => {
       setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
     });
-
-    // Messenger popup
-    const messenger = document.getElementById('messenger');
-    const messagesOpen = document.getElementById('messagesOpen');
-    const messagesClose = document.getElementById('messagesClose');
-    messagesOpen.addEventListener('click', () => {
-      messenger.setAttribute('aria-hidden','false');
-      messenger.classList.add('open');
-    });
-    messagesClose.addEventListener('click', () => {
-      messenger.setAttribute('aria-hidden','true');
-      messenger.classList.remove('open');
-    });
-
-    // Basic accessible keyboard for stories (example)
-    document.querySelectorAll('.story[tabindex]').forEach(s => {
-      s.addEventListener('keypress', e => { if (e.key === 'Enter') s.click(); });
-      s.addEventListener('click', () => { alert('Open story (placeholder)'); });
-    });
   </script>
+  
 </body>
 </html>
-
-
-

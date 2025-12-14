@@ -27,6 +27,7 @@
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale;
     line-height:1.35;
+    padding-top: 64px; /* height of the topbar */
   }
   
   /* TOP BAR */
@@ -36,20 +37,46 @@
     justify-content:space-between;
     gap:12px;
     padding:8px 16px;
-    background:linear-gradient(180deg, rgba(0,0,0,0.18), transparent);
-    position:sticky;
-    top:0;
-    z-index:40;
-    border-bottom:1px solid rgba(255,255,255,0.02);
+  
+    /* USE THEME COLORS */
+    background: var(--panel);
+  
+    position: fixed;   /* stronger than sticky */
+    top: 0;
+    left: 0;
+    width: 100%;
+  
+    z-index: 1000;     /* stays above everything */
+    border-bottom: 1px solid rgba(255,255,255,0.08);
   }
   
+  .nav-btn{
+    color: var(--muted);
+  }
+  
+  .nav-btn.active{
+    background: rgba(255,255,255,0.08);
+    color: var(--text);
+  }
+  
+  .icon-btn{
+    background: var(--panel);
+    color: var(--text);
+  }
+  
+  .search input{
+    background: var(--bg);
+    color: var(--text);
+  }
+  
+
   .post-body span{
     color: #1877f2;
   }
 
   .topbar-left{display:flex;align-items:center;gap:12px}
   .logo{
-    width:40px;height:40px;border-radius:8px;
+    width:40px;height:40px;border-radius:20px;
     background:var(--accent); color:white;border:none;font-weight:800;
     font-size:20px;display:flex;align-items:center;justify-content:center;cursor:pointer;
   }
@@ -117,9 +144,9 @@
   }
   
   /* LEFT column specifics */
-  .left-col .intro .bio{margin:8px 0;color:var(--muted)}
-  .intro-list{padding-left:18px;color:var(--muted);margin:8px 0}
-  .edit-link{display:inline-block;margin-top:8px;color:var(--accent);text-decoration:none}
+  .left-col .intro .bio{margin:8px 0;color:var(--muted);  position: sticky;}
+  .intro-list{padding-left:18px;color:var(--muted);margin:8px 0; position: sticky;}
+  .edit-link{display:inline-block;margin-top:8px;color:var(--accent);text-decoration:none; position: sticky;}
   
   /* photo grid */
   .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
