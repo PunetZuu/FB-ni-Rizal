@@ -98,21 +98,21 @@
   .profile-mini img{width:36px;height:36px;border-radius:50%;object-fit:cover}
   
   /* PROFILE HERO */
-  .profile-hero .cover{position:relative;height:400px; width: 65% ; justify-self: center; overflow:hidden;background:linear-gradient(90deg,#111,#222) object-fit:cover;}
-  .profile-hero .cover img{width:100%;height:100%;object-fit:cover;  border-radius: 10px;}
+  .profile-hero .cover{position:absolute;height:400px; width: 65% ; justify-self: center; overflow:hidden;background:linear-gradient(90deg,#11111100,#22222200); object-fit:cover; z-index: -1;}
+  .profile-hero .cover img{width:100%;height:100%;object-fit:cover;  border-radius: 15px;}
   .profile-hero .cover .edit-cover{
     position:absolute;right:18px;bottom:30px;padding:8px 12px;border-radius:10px;border:none;background:rgba(0, 0, 0, 0.594);color:white;cursor:pointer;
   }
   
-  .profile-row{display:flex;gap:18px;padding:18px 20px;align-items:flex-end;max-width:1200px;margin:0px auto 0; padding-top:20px;}
+  .profile-row{display:flex;gap:18px;align-items:flex-end;max-width:1200px;margin:0 auto 0;}
   .profile-photo{position:relative}
   .profile-photo img{
-    width:150px;height:150px;border-radius:50%;border:5px solid var(--bg);object-fit:cover;background:var(--panel)
+    width:150px;height:150px;border-radius:50%;border:5px solid var(--bg);object-fit:cover;background:var(--panel); margin-top: 340px;
   }
   .profile-photo .upload-photo{position:absolute;right:0;bottom:0;padding:6px 8px;border-radius:8px;border:none;background:var(--panel);cursor:pointer}
   
   .profile-meta{flex:1}
-  .profile-meta .name{margin:0;font-size:28px}
+  .profile-meta .name{margin:10px 0;font-size:28px;}
   .profile-meta .friends-count{color:var(--muted);margin:6px 0}
   .profile-actions{display:flex;gap:8px;align-items:center}
   .cta{background:var(--accent);color:white;border:none;padding:8px 12px;border-radius:8px;cursor:pointer}
@@ -120,15 +120,48 @@
   .more{padding:8px 10px;border-radius:8px;background:var(--panel);cursor:pointer}
   
   /* tabs */
-  .profile-tabs{margin-top:12px;display:flex;gap:8px}
-  .tab{background:transparent;border:none;padding:10px 12px;border-radius:8px;color:var(--muted);cursor:pointer}
-  .tab.active{background:rgba(255,255,255,0.03);color:var(--text)}
+  .profile-tabs{
+    margin: 20px auto auto ;
+    display:flex;
+    gap:18px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    max-width: 1200px;
+    justify-items: center;
+    border-top: 1px solid rgba(255,255,255,.08);
+  }
+  
+  .tab{
+    background:none;
+    border:none;
+    padding:20px 6px;
+    color:var(--muted);
+    font-weight:600;
+    cursor:pointer;
+    position:relative;
+  }
+  
+  .tab.active{
+    color:var(--accent);
+  }
+  
+  .tab.active::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:-1px;
+    height:3px;
+    background:var(--accent);
+    border-radius:6px;
+
+  }
+  
   
   /* MAIN GRID */
   .main-grid{
     display:grid;
-    grid-template-columns: 280px 1fr 320px;
-    gap:18px;
+    grid-template-columns: 1fr 490px 1fr 680px;
+    gap:30px;
     max-width:1200px;
     margin:18px auto 80px;
     padding:0 18px;
@@ -150,6 +183,7 @@
     width: 100%;                    /* Ensures container takes up full width */
     text-decoration: none;
   }
+  
   /* LEFT column specifics */
   .left-col .intro .bio{margin:8px 0;color:var(--muted);  position: sticky;}
   .intro-list{padding-left:18px;color:var(--muted);margin:8px 0; position: sticky;}
@@ -157,16 +191,16 @@
   
   /* photo grid */
   .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
-  .photo-grid img{width:100%;height:86px;object-fit:cover;border-radius:6px}
+  .photo-grid img{width:100%;height:150px;object-fit:cover;border-radius:6px}
   
   /* friends grid */
-  .friends-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-  .friend{width:48%;display:flex;gap:8px;align-items:center}
-  .friend img{width:48px;height:48px;border-radius:8px;object-fit:cover}
-  .friend span{font-size:14px}
+  .friends-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+  .friend{width:48%;display:flex;flex-direction: column; gap:8px;align-items:start}
+  .friend img{width:145.33px;height:145.33px;border-radius:8px;object-fit:cover}
+  .friend span{font-size:12px; width: 145.33px; margin-bottom: 20px;}
   
   /* center column */
-  .center-col{display:flex;flex-direction:column;gap:12px}
+  .center-col{display:flex;flex-direction:column;gap:12px;width: 680px;}
   
   /* stories row */
   .stories{display:flex;gap:10px;overflow:auto}
@@ -202,10 +236,95 @@
   .add-comment input{flex:1;padding:8px;border-radius:18px;border:1px solid rgba(0,0,0,0.12);background:transparent;color:var(--text)}
   
   /* right column */
-  .right-col .suggest{display:flex;gap:8px;align-items:center}
-  .right-col .suggest img{width:56px;height:56px;border-radius:10px;object-fit:cover}
-  .suggest-actions{display:flex;gap:8px;margin-top:6px}
-  .suggest-actions button{padding:6px 8px;border-radius:8px;border:none;cursor:pointer}
+/* PEOPLE YOU MAY KNOW (FB STYLE) */
+.people-you-may-know{
+  width: 1200px;
+  justify-self: center;
+  border: 1px solid rgba(70, 69, 69, 0.227);
+}
+
+.people-you-may-know .card-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.people-you-may-know a{
+  color:var(--accent);
+  text-decoration:none;
+  font-size:14px;
+}
+.card-head h3{margin: 5px; font-weight: 500;}
+.people-scroll{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+}
+
+.people-scroll::-webkit-scrollbar{
+  height:6px;
+}
+.people-scroll::-webkit-scrollbar-thumb{
+  background:rgba(255,255,255,0.15);
+  border-radius:10px;
+}
+
+.person-card{
+  min-width:160px;
+  max-width: 272.81px;
+  background:var(--bg);
+  border-radius:10px;
+  overflow:hidden;
+  position:relative;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
+
+}
+
+.person-card img{
+  width: 170px;
+  height:170px;
+  object-fit:cover;
+}
+
+.person-card .close{
+  position:absolute;
+  top:6px;
+  right:6px;
+  border:none;
+  background:rgba(0,0,0,.6);
+  color:#fff;
+  border-radius:50%;
+  width:26px;
+  height:26px;
+  cursor:pointer;
+}
+
+.person-info{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  padding: 0 10px 10px 10px;
+}
+
+.person-info strong{
+  font-size:14px;
+}
+
+.person-info span{
+  font-size:12px;
+  color:var(--muted);
+}
+
+.add-friend{
+  background:#1b74e4;
+  border:none;
+  color:white;
+  padding:6px;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:14px;
+}
   
   /* messenger popup */
   .messenger{
@@ -243,3 +362,88 @@
     .photo-grid img{height:70px}
   }
   
+  /* IMAGE LIGHTBOX (FB STYLE) */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .25s ease;
+  z-index:2000;
+}
+
+.lightbox.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.lightbox-img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:12px;
+  box-shadow:0 20px 60px rgba(0,0,0,.8);
+  animation:zoomIn .25s ease;
+}
+
+.lightbox-close{
+  position:absolute;
+  top:20px;
+  right:24px;
+  font-size:36px;
+  color:white;
+  cursor:pointer;
+  user-select:none;
+}
+
+@keyframes zoomIn{
+  from{transform:scale(.9);opacity:.5}
+  to{transform:scale(1);opacity:1}
+}
+
+/* cursor hint */
+.post-image{
+  cursor:zoom-in;
+}
+
+/* IMAGE LIGHTBOX */
+.lightbox{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+  z-index: 9999;
+}
+
+.lightbox.show{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-img{
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 25px 80px rgba(0,0,0,.8);
+}
+
+.lightbox-close{
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+.post-image{
+  cursor: zoom-in;
+}

@@ -56,23 +56,76 @@
       <div class="profile-meta">
         <h1 class="name">José Protacio Rizal Mercado y Alonzo Realonda</h1>
         <p class="friends-count">731 friends</p>
-        <div class="profile-actions">
-          <button class="cta">Add to story</button>
-          <button class="cta secondary">Edit profile</button>
-          <div class="more">⋯</div>
-        </div>
+      </div>
 
-        <div class="profile-tabs">
-          <button class="tab active">Posts</button>
-          <button class="tab">About</button>
-          <button class="tab">Friends</button>
-          <button class="tab">Photos</button>
-          <button class="tab">Videos</button>
-          <button class="tab">More ▾</button>
+      <div class="profile-actions">
+        <button class="cta">Add to story</button>
+        <button class="cta secondary">Edit profile</button>
+        <div class="more">⋯</div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="card people-you-may-know">
+    <div class="card-head">
+      <h3>People You May Know</h3>
+      <a href="#">See all</a>
+    </div>
+  
+    <div class="people-scroll">
+      <!-- CARD -->
+      <div class="person-card">
+        <button class="close">✕</button>
+        <img src="pictures/Maam Mika.jpg" alt="">
+        <div class="person-info">
+          <strong>Mika Repedro</strong>
+          <span>2 mutual friends</span>
+          <button class="add-friend" onclick="mika()">Add friend</button>
+          <script> function mika(){window.open("https://www.facebook.com/MikaRepedro17", '_blank')}</script>
+        </div>
+      </div>
+  
+      <div class="person-card">
+        <button class="close">✕</button>
+        <img src="pictures/Antonio_luna_small.jpg" alt="">
+        <div class="person-info">
+          <strong>Antonio Luna</strong>
+          <span>18 mutual friends</span>
+          <button class="add-friend">Add friend</button>
+        </div>
+      </div>
+  
+      <div class="person-card">
+        <button class="close">✕</button>
+        <img src="pictures/Jose_Rizal_full.jpg" alt="">
+        <div class="person-info">
+          <strong>Paciano Rizal</strong>
+          <span>5 mutual friends</span>
+          <button class="add-friend">Add friend</button>
+        </div>
+      </div>
+  
+      <div class="person-card">
+        <button class="close">✕</button>
+        <img src="pictures/medium.jpeg" alt="">
+        <div class="person-info">
+          <strong>Teodora Alonso</strong>
+          <span>1 mutual friend</span>
+          <button class="add-friend">Add friend</button>
         </div>
       </div>
     </div>
   </section>
+  
+    <div class="profile-tabs">
+      <button class="tab active">Posts</button>
+      <button class="tab">About</button>
+      <button class="tab">Friends</button>
+      <button class="tab">Photos</button>
+      <button class="tab">Videos</button>
+      <button class="tab">More ▾</button>
+    </div>
 
   <!-- MAIN GRID -->
   <main class="main-grid">
@@ -119,8 +172,17 @@
           <div class="friend"><img src="pictures/rizal-leonorvalenzuela.jpg" alt=""><span>Leonor Valenzuela</span></div>
           <div class="friend"><img src="pictures/rizal-leonorrivera.jpg" alt=""><span>Leonor Rivera</span></div>
           <div class="friend"><img src="pictures/rizal-consuelo.jpeg" alt=""><span>Consuelo Ortega Y Rey</span></div>
+          <div class="friend"><img src="pictures/rizal-consuelo.jpeg" alt=""><span>Consuelo Ortega Y Rey</span></div>
+          <div class="friend"><img src="pictures/rizal-consuelo.jpeg" alt=""><span>Consuelo Ortega Y Rey</span></div>
         </div>
       </section>
+
+        <!-- FOOTER -->
+  <footer class="site-footer">
+    <div>Mock Facebook Profile by Jeross Tapiador</div>
+    <div class="muted">Rizal Life and Works</div>
+  </footer>
+
     </aside>
 
     <!-- MIDDLE COLUMN (feed) -->
@@ -159,7 +221,7 @@
       <!-- Post 1 -->
       <article class="post card">
         <header class="post-head">
-          <img src="pictures/Jose_Rizal_full.jpg" alt="">
+          <img src="pictures/Jose_Rizal_full.jpg" alt="" class="post-image">
           <div>
             <strong>José Protacio Rizal Mercado y Alonzo Realonda</strong>
             <div class="meta">March 23, 1877 at 3:27 PM • Public</div>
@@ -241,42 +303,7 @@
         </footer>
       </article>
     </section>
-
-    <!-- RIGHT COLUMN -->
-    <aside class="right-col">
-      <section class="card suggestions">
-        <h3>People you may know</h3>
-        <div class="suggest">
-          <img src="pictures/Antonio_luna_small.jpg" alt="Antonio Luna">
-          <div>
-            <strong>Antonio Luna</strong>
-            <div class="muted">18 mutual friends</div>
-            <div class="suggest-actions">
-              <button>Add friend</button>
-              <button>Remove</button>
-            </div>
-          </div>  
-        </div>
-        <div class="suggest">
-          <img src="pictures/Maam Mika.jpg" alt="Ma'am Mika Repedro">
-          <div>
-            <strong>Mika Repedro</strong>
-            <div class="muted">2 mutual friends</div>
-            <div class="suggest-actions">
-              <button>Add friend</button>
-              <button>Remove</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="card events">
-        <h3>Upcoming</h3>
-        <p class="muted">No upcoming events</p>
-      </section>
-    </aside>
-  </main>
-
+    
   <!-- MESSENGER POPUP -->
   <div id="messenger" class="messenger" aria-hidden="true">
     <div class="messenger-header">
@@ -295,13 +322,13 @@
       <input placeholder="Type a message...">
       <button>Send</button>
     </div>
+      
   </div>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div>Mock Facebook Profile by Jeross Tapiador</div>
-    <div class="muted">Rizal Life and Works</div>
-  </footer>
+  <div id="imageLightbox" class="lightbox" aria-hidden="true">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-img" src="" alt="Expanded view">
+  </div>
 
   <!-- Minimal JS for theme, messenger open/close -->
   <script>
@@ -320,8 +347,42 @@
     themeToggle.addEventListener('click', () => {
       setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
     });
+
+  /* IMAGE LIGHTBOX LOGIC */
+  const lightbox = document.getElementById("imageLightbox");
+  const lightboxImg = document.querySelector(".lightbox-img");
+  const closeBtn = document.querySelector(".lightbox-close");
+
+  document.querySelectorAll(".post-image").forEach(img=>{
+    img.addEventListener("click",()=>{
+      lightboxImg.src = img.src;
+      lightbox.classList.add("show");
+      lightbox.setAttribute("aria-hidden","false");
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  function closeLightbox(){
+    lightbox.classList.remove("show");
+    lightbox.setAttribute("aria-hidden","true");
+    document.body.style.overflow = "";
+  }
+
+  closeBtn.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", e=>{
+    if(e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener("keydown", e=>{
+    if(e.key === "Escape") closeLightbox();
+  });
+
+
   </script>
   
+  
+
 </body>
 </html>
 
