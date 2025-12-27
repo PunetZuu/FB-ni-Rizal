@@ -49,7 +49,7 @@
     <!-- profile row -->
     <div class="profile-row">
       <div class="profile-photo">
-        <img src="pictures/Jose_Rizal_full.jpg" alt="Profile photo" class="family">
+        <img src="pictures/Jose_Rizal_full.jpg" alt="Profile photo">
         <button class="upload-photo">Change</button>
       </div>
 
@@ -65,59 +65,93 @@
       </div>
     </div>
 
-  </section>
+    <section class="card people-you-may-know">
+      <div class="card-head">
+        <h3>People You May Know</h3>
+        <a href="#">See all</a>
+      </div>
+    
+      <div class="people-scroll">
+        <!-- CARD -->
+        <div class="person-card">
+          <button class="close">✕</button>
+          <img src="pictures/Maam Mika.jpg" alt="">
+          <div class="person-info">
+            <strong>Mika Repedro</strong>
+            <span>2 mutual friends</span>
+            <button class="add-friend" onclick="mika()">Add friend</button>
+            <script> function mika(){window.open("https://www.facebook.com/MikaRepedro17", '_blank')}</script>
+          </div>
+        </div>
+    
+        <div class="person-card">
+          <button class="close">✕</button>
+          <img src="pictures/Antonio_luna_small.jpg" alt="">
+          <div class="person-info">
+            <strong>Antonio Luna</strong>
+            <span>1 mutual friends</span>
+            <button class="add-friend" onclick="anto()">Add friend</button>
+            <script> function anto(){window.open("https://www.facebook.com/profile.php?id=61583388733177", '_blank')}</script>
+          </div>
+        </div>
+    
+        <div class="person-card">
+          <button class="close">✕</button>
+          <img src="pictures/jay.jpg" alt="">
+          <div class="person-info">
+            <strong>Jay Lacaba</strong>
+            <span>Followed by 236</span>
+            <button class="add-friend" onclick="jay()">Add friend</button>
+            <script> function jay(){window.open("https://www.facebook.com/jay.lacaba", '_blank')}</script>
+          </div>
+        </div>
+        
+        <div class="person-card">
+          <button class="close">✕</button>
+          <img src="pictures/Jo.jpg" alt="">
+          <div class="person-info">
+            <strong>Joshua Janolan</strong>
+            <span>17 mutual friends</span>
+            <button class="add-friend" onclick="jo()">Add friend</button>
+            <script> function jo(){window.open("https://www.facebook.com/joross.janolan", '_blank')}</script>
+          </div>
+        </div>
 
-  <section class="card people-you-may-know">
-    <div class="card-head">
-      <h3>People You May Know</h3>
-      <a href="#">See all</a>
-    </div>
-  
-    <div class="people-scroll">
-      <!-- CARD -->
-      <div class="person-card">
-        <button class="close">✕</button>
-        <img src="pictures/Maam Mika.jpg" alt="">
-        <div class="person-info">
-          <strong>Mika Repedro</strong>
-          <span>2 mutual friends</span>
-          <button class="add-friend" onclick="mika()">Add friend</button>
-          <script> function mika(){window.open("https://www.facebook.com/MikaRepedro17", '_blank')}</script>
+        <div class="person-card">
+          <button class="close">✕</button>
+          <img src="pictures/joe.jpg" alt="">
+          <div class="person-info">
+            <strong>Joemel Batumbakal</strong>
+            <span>9 mutual friends</span>
+            <button class="add-friend" onclick="joe()">Add friend</button>
+            <script> function joe(){window.open("https://www.facebook.com/Kil.hh", '_blank')}</script>
+          </div>
+        </div>
+
+        <div class="person-card">
+          <button class="close">✕</button>
+          <img src="pictures/juan.jpg" alt="">
+          <div class="person-info">
+            <strong>Juan Ponce Enrile</strong>
+            <span>721 mutual friends</span>
+            <button class="add-friend" onclick="juan()">Add friend</button>
+            <script> function juan(){window.open("https://www.facebook.com/JuanPonceEnrile", '_blank')}</script>
+          </div>
+        </div>
+
+        <div class="person-card">
+          <button class="close">✕</button>
+          <img src="pictures/jeross.jpg" alt="">
+          <div class="person-info">
+            <strong>Jeross Tapiador</strong>
+            <span>Followed by 12</span>
+            <button class="add-friend" onclick="je()">Add friend</button>
+            <script> function je(){window.open("https://www.facebook.com/100012201765872", '_blank')}</script>
+          </div>
         </div>
       </div>
-  
-      <div class="person-card">
-        <button class="close">✕</button>
-        <img src="pictures/Antonio_luna_small.jpg" alt="">
-        <div class="person-info">
-          <strong>Antonio Luna</strong>
-          <span>18 mutual friends</span>
-          <button class="add-friend">Add friend</button>
-        </div>
-      </div>
-  
-      <div class="person-card">
-        <button class="close">✕</button>
-        <img src="pictures/Jose_Rizal_full.jpg" alt="">
-        <div class="person-info">
-          <strong>Paciano Rizal</strong>
-          <span>5 mutual friends</span>
-          <button class="add-friend">Add friend</button>
-        </div>
-      </div>
-  
-      <div class="person-card">
-        <button class="close">✕</button>
-        <img src="pictures/medium.jpeg" alt="">
-        <div class="person-info">
-          <strong>Teodora Alonso</strong>
-          <span>1 mutual friend</span>
-          <button class="add-friend">Add friend</button>
-        </div>
-      </div>
-    </div>
-  </section>
-  
+    </section>
+
     <div class="profile-tabs">
       <button class="tab active">Posts</button>
       <button class="tab">About</button>
@@ -126,6 +160,8 @@
       <button class="tab">Videos</button>
       <button class="tab">More ▾</button>
     </div>
+
+  </section>
 
   <!-- MAIN GRID -->
   <main class="main-grid">
@@ -158,6 +194,9 @@
           <img src="pictures/images.png" alt="photo 4">
           <img src="pictures/rizal_hall_1947.jpg" alt="photo 5">
           <img src="pictures/1419820371-Leonor-Rivera.jpg" alt="photo 6">
+          <img src="pictures/Jose_Rizal_full.jpg" alt="">
+          <img src="pictures/JoseRizal Family pic.jpg" alt="">
+          <img src="pictures/pexels-photo-14351842.jpeg" alt="Books at Library">
         </div>
       </section>
 
@@ -172,8 +211,14 @@
           <div class="friend"><img src="pictures/rizal-leonorvalenzuela.jpg" alt=""><span>Leonor Valenzuela</span></div>
           <div class="friend"><img src="pictures/rizal-leonorrivera.jpg" alt=""><span>Leonor Rivera</span></div>
           <div class="friend"><img src="pictures/rizal-consuelo.jpeg" alt=""><span>Consuelo Ortega Y Rey</span></div>
-          <div class="friend"><img src="pictures/rizal-consuelo.jpeg" alt=""><span>Consuelo Ortega Y Rey</span></div>
-          <div class="friend"><img src="pictures/rizal-consuelo.jpeg" alt=""><span>Consuelo Ortega Y Rey</span></div>
+          <div class="friend"><img src="pictures/O-Sei San (Seiko Usui).jpg" alt=""><span>O-Sei San (Seiko Usui)</span></div>
+
+          <div class="friend"><img src="pictures/gertrude-beckett.jpg" alt=""><span>Gertrude Beckett</span></div>
+
+          <div class="friend"><img src="pictures/teodora.jpg" alt=""><span>Teodora Alonzo</span></div>
+          <div class="friend"><img src="pictures/medium.jpeg" alt=""><span>Paciano Rizal</span></div>
+
+          <div class="friend"><img src="pictures/nellie-boustead.jpg" alt=""><span>Nellie Boustead</span></div>
         </div>
       </section>
 
@@ -206,15 +251,25 @@
 
       <!-- Composer -->
       <div class="composer card">
-        <img class="composer-avatar" src="pictures/Jose_Rizal_full.jpg" alt="you">
+        <div class="bar">
+          <img class="composer-avatar" src="pictures/Jose_Rizal_full.jpg" alt="you">
         <input class="composer-input" type="text" placeholder="What's on your mind, José?">
+        </div>
+        
         <div class="composer-actions">
-          <img height="24" width="24" class="xz74otr x15mokao x1ga7v0g x16uus16 xbiv7yw" alt="" referrerpolicy="origin-when-cross-origin" src="https://static.xx.fbcdn.net/rsrc.php/v4/yr/r/c0dWho49-X3.png?_nc_eui2=AeGQQim_YT6WYpTpQMhjUzeGueRic5Ym8Wm55GJzlibxacAvxBnHVBcesil9ALwLD-ygNg-UJVRDVWzcpWG9pgQz">
-          <button>Live video</button>
-          <img height="24" width="24" class="xz74otr x15mokao x1ga7v0g x16uus16 xbiv7yw" alt="" referrerpolicy="origin-when-cross-origin" src="https://static.xx.fbcdn.net/rsrc.php/v4/y7/r/Ivw7nhRtXyo.png?_nc_eui2=AeFYbeehmeWHBZxeKg5rnQ0YkBVQC4m7dx6QFVALibt3Hrf8T0pLPl8Bnz4mUpkPjKFG0KF7rouKKL7gy7I1BqIb">
-          <button>Photo/video</button>
-          <img height="24" width="24" class="xz74otr x15mokao x1ga7v0g x16uus16 xbiv7yw" alt="" referrerpolicy="origin-when-cross-origin" src="https://static.xx.fbcdn.net/rsrc.php/v4/yd/r/pkbalDbTOVI.png?_nc_eui2=AeFDPtH6bgn_CUZqWtdO6XOvxUvOOua_OjbFS8465r86Nu2the4gHQXJ1AMOYmBinKCPsjha9Eli44frHQZ4-dQv">
-          <button>Life update</button>
+          <div class="live">
+            <img height="24" width="24" class="xz74otr x15mokao x1ga7v0g x16uus16 xbiv7yw" alt="" referrerpolicy="origin-when-cross-origin" src="https://static.xx.fbcdn.net/rsrc.php/v4/yr/r/c0dWho49-X3.png?_nc_eui2=AeGQQim_YT6WYpTpQMhjUzeGueRic5Ym8Wm55GJzlibxacAvxBnHVBcesil9ALwLD-ygNg-UJVRDVWzcpWG9pgQz">
+          <p>Live Video</p>
+          </div>
+          <div class="live">
+            <img height="24" width="24" class="xz74otr x15mokao x1ga7v0g x16uus16 xbiv7yw" alt="" referrerpolicy="origin-when-cross-origin" src="https://static.xx.fbcdn.net/rsrc.php/v4/y7/r/Ivw7nhRtXyo.png?_nc_eui2=AeFYbeehmeWHBZxeKg5rnQ0YkBVQC4m7dx6QFVALibt3Hrf8T0pLPl8Bnz4mUpkPjKFG0KF7rouKKL7gy7I1BqIb">
+          <p>Photo/Video</p>
+          </div>
+          <div class="live">
+            <img height="24" width="24" class="xz74otr x15mokao x1ga7v0g x16uus16 xbiv7yw" alt="" referrerpolicy="origin-when-cross-origin" src="https://static.xx.fbcdn.net/rsrc.php/v4/yd/r/pkbalDbTOVI.png?_nc_eui2=AeFDPtH6bgn_CUZqWtdO6XOvxUvOOua_OjbFS8465r86Nu2the4gHQXJ1AMOYmBinKCPsjha9Eli44frHQZ4-dQv">
+          <p>Life Update</p>
+          </div>
+          
         </div>
       </div>
 
@@ -230,7 +285,7 @@
         </header>
 
         <div class="post-body">
-          <p>Just graduated from the Ateneo Municipal de Manila with a Bachelor of Arts degree with highest honors. Basic! <span>#HighestHonor #BasicLangExam #Ateneo</span></p>
+          <p>Just graduated from the Ateneo Municipal de Manila with a Bachelor of Arts degree with highest honors. Basic! <span>#HighestHonor #BasicLang #Ateneo</span></p>
           <img src="pictures/rizal001-e1312290603785.jpg" alt="post image" class="post-image" height="600px">
         </div>
 
@@ -238,7 +293,6 @@
           <div class="reactions">
             <span>👍 3</span>
             <span>❤️ 1</span>
-            <span>😂 0</span>
           </div>
           <div class="post-actions">
             <button class="like">Like</button>
@@ -252,7 +306,7 @@
               <div>
                 <strong>Segunda Katigbak</strong>
                 <p>Nice one baby!</p>
-                <div class="comment-meta">1 hr • Like</div>
+                <div class="comment-meta">149 y • Like</div>
               </div>
             </div>
 
@@ -261,7 +315,7 @@
               <div>
                 <strong>Teodora Alonso</strong>
                 <p>Congrats Nak!</p>
-                <div class="comment-meta">2 hr • Like</div>
+                <div class="comment-meta">149 y • Like</div>
               </div>
             </div>
 
@@ -270,7 +324,7 @@
               <div>
                 <strong>Paciano Rizal</strong>
                 <p>Proud of you, Pepe!</p>
-                <div class="comment-meta">2 hr • Like</div>
+                <div class="comment-meta">149 y • Like</div>
               </div>
             </div>
 
@@ -296,9 +350,78 @@
           <img src="pictures/Jose_Rizal_full.jpg" alt="t1" class="post-image">
         </div>
         <footer class="post-footer">
-          <div class="reactions">❤ 10 · 👍 5</div>
+          <div class="reactions">❤️ 10 · 👍 5</div>
           <div class="post-actions">
             <button>Like</button><button>Comment</button><button>Share</button>
+            
+          </div>
+          <div class="comment">
+            <img src="pictures/medium.jpeg" alt="">
+            <div>
+              <strong>Paciano Rizal</strong>
+              <p>Sarap haha</p>
+              <div class="comment-meta">149 y • Like</div>
+            </div>
+          </div>
+
+          <div class="add-comment">
+            <img src="/mnt/data/e560c188-c231-4f83-94b1-1ea0940890d1.png" alt="">
+            <input type="text" placeholder="Write a comment...">
+          </div>
+        </footer>
+      </article>
+
+      <article class="post card">
+        <header class="post-head">
+          <img src="pictures/Jose_Rizal_full.jpg" alt="" class="post-image">
+          <div>
+            <strong>José Protacio Rizal Mercado y Alonzo Realonda</strong>
+            <div class="meta">February 17, 1872 at 9:00 PM • Public</div>
+          </div>
+          <div class="post-menu">⋯</div>
+        </header>
+
+        <div class="post-body">
+          <p>Mamimiss ko kayo mga tol <span>#Gomez #Burgos #Zamora #MaJoHa</span></p>
+          <img src="pictures/Gomburza.jpg" alt="post image" class="post-image" height="600px">
+        </div>
+
+        <footer class="post-footer">
+          <div class="reactions">
+            <span>😢 58</span>
+            <span>❤️ 46</span>
+            <span>👍 12</span>
+          </div>
+          <div class="post-actions">
+            <button class="like">Like</button>
+            <button class="comment">Comment</button>
+            <button class="share">Share</button>
+          </div>
+
+          <div class="comment">
+            <img src="pictures/medium.jpeg" alt="">
+            <div>
+              <strong>Paciano Rizal</strong>
+              <p>Nakakadurog ng puso pepe😢</p>
+              <div class="comment-meta">154 y • Like</div>
+            </div>
+          </div>
+
+            <div class="comment">
+              <img src="pictures/teodora.jpg" alt="">
+              <div>
+                <strong>Teodora Alonso</strong>
+                <p>Anyare Nak😭</p>
+                <div class="comment-meta">154 y • Like</div>
+              </div>
+            </div>
+
+            
+
+            <div class="add-comment">
+              <img src="/mnt/data/e560c188-c231-4f83-94b1-1ea0940890d1.png" alt="">
+              <input type="text" placeholder="Write a comment...">
+            </div>
           </div>
         </footer>
       </article>

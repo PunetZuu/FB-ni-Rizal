@@ -1,5 +1,6 @@
 :root{
-    --bg: #18191a;
+    --bg: #272727;
+    --bgg: #1d1e1e;
     --panel: #242526;
     --muted: #b0b3b8;
     --accent: #1877f2;
@@ -10,6 +11,7 @@
   /* Light theme vars */
   :root[data-theme="light"]{
     --bg: #f0f2f5;
+    --bgg: #e4e6e9;
     --panel: #fff;
     --muted: #606770;
     --accent: #1877f2;
@@ -28,6 +30,7 @@
     -moz-osx-font-smoothing:grayscale;
     line-height:1.35;
     padding-top: 64px; /* height of the topbar */
+    background: var(--bgg);
   }
   
   /* TOP BAR */
@@ -98,36 +101,41 @@
   .profile-mini img{width:36px;height:36px;border-radius:50%;object-fit:cover}
   
   /* PROFILE HERO */
-  .profile-hero .cover{position:absolute;height:400px; width: 65% ; justify-self: center; overflow:hidden;background:linear-gradient(90deg,#11111100,#22222200); object-fit:cover; z-index: -1;}
+  .profile-hero{background: var(--bg);}
+  .profile-hero .cover{position:absolute;height:400px; width: 65% ; justify-self: center; overflow:hidden;background:linear-gradient(90deg,#11111100,#22222200); object-fit:cover; z-index: 1;}
   .profile-hero .cover img{width:100%;height:100%;object-fit:cover;  border-radius: 15px;}
   .profile-hero .cover .edit-cover{
     position:absolute;right:18px;bottom:30px;padding:8px 12px;border-radius:10px;border:none;background:rgba(0, 0, 0, 0.594);color:white;cursor:pointer;
   }
+
+  
   
   .profile-row{display:flex;gap:18px;align-items:flex-end;max-width:1200px;margin:0 auto 0;}
-  .profile-photo{position:relative}
+  .profile-photo{position:relative; z-index: 2;}
   .profile-photo img{
-    width:150px;height:150px;border-radius:50%;border:5px solid var(--bg);object-fit:cover;background:var(--panel); margin-top: 340px;
+    width:150px;height:150px;border-radius:50%;border:5px solid var(--bg);object-fit:cover;background:var(--panel); margin-top: 340px; 
   }
-  .profile-photo .upload-photo{position:absolute;right:0;bottom:0;padding:6px 8px;border-radius:8px;border:none;background:var(--panel);cursor:pointer}
+  .profile-photo .upload-photo{position:absolute;right:0;bottom:0;padding:6px 8px;border-radius:8px;border:none;background:var(--panel);cursor:pointer; color: var(--text);}
   
   .profile-meta{flex:1}
   .profile-meta .name{margin:10px 0;font-size:28px;}
   .profile-meta .friends-count{color:var(--muted);margin:6px 0}
   .profile-actions{display:flex;gap:8px;align-items:center}
   .cta{background:var(--accent);color:white;border:none;padding:8px 12px;border-radius:8px;cursor:pointer}
-  .cta.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+  .cta.secondary{background:transparent;
+    border:1px solid rgba(255,255,255,0.06);
+    color:var(--text)}
   .more{padding:8px 10px;border-radius:8px;background:var(--panel);cursor:pointer}
   
   /* tabs */
   .profile-tabs{
-    margin: 20px auto auto ;
+    margin: auto auto ;
     display:flex;
     gap:18px;
     border-bottom:1px solid rgba(255,255,255,.08);
     max-width: 1200px;
     justify-items: center;
-    border-top: 1px solid rgba(255,255,255,.08);
+    border-top: 1px solid rgba(0, 0, 0, 0.306);
   }
   
   .tab{
@@ -165,6 +173,7 @@
     max-width:1200px;
     margin:18px auto 80px;
     padding:0 18px;
+    background:var(--bgg);
   }
   
   /* Cards */
@@ -205,23 +214,27 @@
   /* stories row */
   .stories{display:flex;gap:10px;overflow:auto}
   .story{min-width:120px;border-radius:10px;padding:8px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);text-align:center;cursor:pointer}
-  .story img{width:100%;height:90px;object-fit:cover;border-radius:8px}
+  .story img{width:100%;height:120px;object-fit:cover;border-radius:8px}
   .story .story-name{margin-top:8px;font-size:13px;color:var(--muted)}
   .story.more{display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--muted)}
   
   /* composer */
-  .composer{display:flex;gap:10px;align-items:center}
+  .composer{display:grid; grid-template-columns: auto; gap:10px;align-items:center; justify-content: center;}
   .composer-avatar{width:48px;height:48px;border-radius:50%;object-fit:cover}
-  .composer-input{flex:1;padding:12px;border-radius:28px;border:1px solid rgba(0,0,0,0.15);background:transparent;color:var(--text)}
-  .composer-actions{display:flex;gap:8px;margin-top:8px}
-  
+  .composer-input{flex:1;padding:12px;border-radius:28px;border:1px solid rgba(0, 0, 0, 0.15);background:transparent;color:var(--text); padding-right: 400px; margin: 0 0 0 20px; }
+  .composer-actions{display:flex;gap:80px;margin-top:8px; justify-content: center; align-items: center; border-top:1px solid rgba(0, 0, 0, 0.15); cursor:pointer;}
+
+ .live{display: flex; justify-content: center; align-items: center; gap: 10px;}
+
+  .composer-card{display: grid; grid-template-columns:88px;}
+  .bar{display: flex;align-items:center; justify-content: center;}
   /* post */
   .post{display:flex;flex-direction:column;gap:10px}
   .post-head{display:flex;gap:12px;align-items:center}
   .post-head img{width:48px;height:48px;border-radius:50%;object-fit:cover}
   .post-head .meta{font-size:13px;color:var(--muted)}
   .post-body p{margin:0}
-  .post-image{width:100%;border-radius:10px;margin-top:8px;object-fit:cover}
+  .post-image{width:650px;border-radius:10px;margin-top:8px;object-fit:cover; height: 700px;}
   .post-footer{border-top:1px solid rgba(255,255,255,0.03);padding-top:8px}
   .reactions{color:var(--muted);font-size:13px;margin-bottom:8px}
   .post-actions{display:flex;gap:10px}
@@ -230,10 +243,12 @@
   /* comments */
   .comments{display:flex;flex-direction:column;gap:8px;margin-top:8px}
   .comment{display:flex;gap:8px;align-items:flex-start}
-  .comment img{width:36px;height:36px;border-radius:50%;object-fit:cover}
+  .comment img{width:36px;height:36px;border-radius:50%;object-fit:cover; align-self: center;}
   .comment .comment-meta{font-size:12px;color:var(--muted)}
   .add-comment{display:flex;gap:8px;align-items:center}
-  .add-comment input{flex:1;padding:8px;border-radius:18px;border:1px solid rgba(0,0,0,0.12);background:transparent;color:var(--text)}
+  .add-comment input{flex:1;padding:8px;border-radius:18px;border:1px solid rgba(0,0,0,0.12);background:transparent;color:var(--text); margin-top: 10px;}
+  .comment p {margin: 0}
+  .comment div { margin-top: 10px;}
   
   /* right column */
 /* PEOPLE YOU MAY KNOW (FB STYLE) */
@@ -241,6 +256,7 @@
   width: 1200px;
   justify-self: center;
   border: 1px solid rgba(70, 69, 69, 0.227);
+  margin-bottom: 20px;
 }
 
 .people-you-may-know .card-head{
